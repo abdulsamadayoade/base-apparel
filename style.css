@@ -48,6 +48,7 @@ body {
 h1 {
     text-transform: uppercase;
     font-size: 60px;
+    font-weight: 600;
     letter-spacing: 13px;
     color: hsl(0, 6%, 24%);
     line-height: 1.1;
