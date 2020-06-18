@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%),hsl(0, 100%, 98%));
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left {
+    width: 60%;
+    padding: 0 40px 40px;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.inner__container {
+    max-width: 450px;
+    margin: auto;
+}
+
+.right {
+    width: 40%;
+}
+
+.bg-image {
+    background-image: url('images/hero-desktop.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+.logo {
+    margin: 60px 0;
+    width: 200px;
+}
+
+.bg-mobile {
+    display: none;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 10px;
+    color: hsl(0, 6%, 24%);
+    line-height: 1.1;
+    margin-bottom: 0;
+    transform: translateX(-100%);
+    animation-name: slideInLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+    }
+}
+
+h1 span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 200;
+}
+
+p {
+    color: hsl(0, 36%, 70%);
+    line-height: 26px;
+    margin: 30px 0;
+    opacity: 0;
+    transform: translateX(100%);
+    animation-name: slideInRight;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+form {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in .6s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+form.error input {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+form.success input {
+    border: 2px solid hsl(0, 36%, 70%);
+}
+
+input {
+    background: transparent;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 15px 30px;
+    height: 55px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px hsla(0, 36%, 70%, 0.5);
+    border-width: 2px;
+}
+
+input::placeholder {
+    color: hsla(0, 36%, 70%);
+}
+
+button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    width: 100px;
+    height: 55px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+button:focus {
+    outline: none;
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 110px;
+}
+
+form.error .error-icon {
+    display: block;
+}
+
+small {
+    color: hsl(0, 93%, 68%);
+    display: none;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+form.error small {
+    display: block;
+}
+
+/* Media Queries */ 
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 100px;
+        margin: 30px 0;
+    }
+
+    .bg-mobile {
+        display: block;
+        margin-left: -40px;
+        margin-right: -40px;
+        width: calc(100% + 80px);
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .left {
+        width: 100%;
+    }
+    
+    .right {
+        display: none;
+    }
+}
