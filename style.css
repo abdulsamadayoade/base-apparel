@@ -78,6 +78,10 @@ form.success input {
     border: 2px solid hsl(0, 36%, 70%);
 }
 
+label {
+    display: none;
+}
+
 input {
     background: transparent;
     border: 1px solid hsl(0, 36%, 70%);
